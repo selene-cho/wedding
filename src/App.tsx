@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './App.module.scss';
+
+import { Wedding } from '@models/wedding';
 import FullScreenMessage from '@shared/FullScreenMessage';
 import Heading from '@components/sections/Heading';
 import Video from '@components/sections/Video';
-import { Wedding } from '@models/wedding';
+import ImageGallery from '@components/sections/ImageGallery';
 
 const cx = classNames.bind(styles);
 
@@ -57,12 +59,13 @@ export default function App() {
     return null;
   }
 
-  const { date } = wedding;
+  const { date, galleryImages } = wedding;
 
   return (
     <div className={cx('container')}>
       <Heading date={date} />
       <Video />
+      <ImageGallery images={galleryImages} />
       {JSON.stringify(wedding)}
     </div>
   );
