@@ -4517,6 +4517,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"swiper@npm:^11.1.12":
+  version: 11.1.12
+  resolution: "swiper@npm:11.1.12"
+  checksum: 10c0/0d8047dbbf79c35f3515d12c77dc5f82d911add0b7e4ca74a8d351cb572c3a327adc3b10ac10f11571205b8071037537edcb81763808a60e4b6d0a81efebc851
+  languageName: node
+  linkType: hard
+
 "synckit@npm:^0.9.1":
   version: 0.9.1
   resolution: "synckit@npm:0.9.1"
@@ -4861,6 +4868,7 @@ __metadata:
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     sass: "npm:^1.78.0"
+    swiper: "npm:^11.1.12"
     typescript: "npm:^5.5.3"
     typescript-eslint: "npm:^8.0.1"
     vite: "npm:^5.4.1"
