@@ -13,3 +13,40 @@
 body {
   font-family: 'NanumDaHaengCe';
 }
+
+/** react-day-picker **/
+
+.rdp-root {
+  display: flex;
+  justify-content: center;
+  --rdp-font-family: 'NanumDaHaengCe';
+  --rdp-accent-color: var(--red);
+  --rdp-today-color: var(--brown);
+  --rdp-day-width: 2.2rem;
+  --rdp-day-height: 2.2rem;
+  --rdp-selected-border: none;
+
+  .rdp-month_caption {
+    display: flex;
+    justify-content: center;
+  }
+
+  .rdp-weekday {
+    font-weight: bold;
+  }
+
+  .rdp-day {
+    pointer-events: none;
+
+    .rdp-day_button {
+      padding-bottom: 5px;
+      margin: 0.15rem;
+    }
+  }
+
+  .rdp-selected .rdp-day_button {
+    background-color: var(--red);
+    color: white;
+    border-radius: 50%;
+  }
+}

@@ -59,12 +59,7 @@ function IconHeart({ className }: { className: string }) {
 
 function IconFlower({ className }: { className: string }) {
   return (
-    <svg
-      className={className}
-      enable-background="new 0 0 512 512"
-      version="1.1"
-      viewBox="0 0 512 512"
-    >
+    <svg className={className} version="1.1" viewBox="0 0 512 512">
       <g id="_x35_85_x2C__Rose_x2C__Flower_x2C__Love_x2C__Propose_x2C__valentine">
         <g>
           <path
