@@ -1,0 +1,11 @@
+@import '@scss/utils.scss';
+
+.container {
+  @include txt-content;
+
+  .icon-card {
+    width: 28px;
+    height: 28px;
+    margin: 72px 0 8px;
+  }
+}
