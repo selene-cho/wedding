@@ -21,7 +21,7 @@ export default function Heading({ date }: { date: string }) {
 
   return (
     <Section className={cx('container')}>
-      <div className={cx('txt-date')}>{format(weddingDate, 'yy.MM.dd')}</div>
+      <div className={cx('txt-date')}>{format(weddingDate, 'yy. MM. dd')}</div>
       <div className={cx('txt-day')}>{DAYS[getDay(weddingDate)]}</div>
     </Section>
   );
