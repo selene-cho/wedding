@@ -53,7 +53,8 @@
       "name": "이지혜",
       "account": {
         "bankName": "농협",
-        "accountNumber": "352-0952-4669-11"
+        "accountNumber": "352-0952-4669-11",
+        "kakaoPayLink": "https://qr.kakaopay.com/Ej7nf2cxR"
       },
       "phoneNumber": "01022345124",
       "parents": [
