@@ -19,7 +19,7 @@ export default function Map({ location }: { location: Location }) {
   useEffect(() => {
     const script = document.createElement('script');
 
-    script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${import.meta.env.VITE_KAKAO_MAP_APP_KEY}&autoload=false`;
+    script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${import.meta.env.VITE_KAKAO_APP_KEY}&autoload=false`;
     script.async = true;
 
     document.head.appendChild(script);
