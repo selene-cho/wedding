@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import 'swiper/scss';
 import './swiper.css';
 import styles from './ImageViewer.module.scss';
+import Dimmed from '@shared/Dimmed';
 
 const cx = classNames.bind(styles);
 
@@ -22,7 +23,7 @@ export default function ImageViewer({
   }
 
   return (
-    <div className={cx('dimmed')}>
+    <Dimmed>
       <CloseButton className={cx('icon-close')} onClose={onClose} />
       <Swiper
         spaceBetween={20}
@@ -38,7 +39,7 @@ export default function ImageViewer({
           );
         })}
       </Swiper>
-    </div>
+    </Dimmed>
   );
 }
 
@@ -51,7 +52,7 @@ function CloseButton({
 }) {
   return (
     <div className={className} onClick={onClose}>
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 24 24">
         <path d="M16.3394 9.32245C16.7434 8.94589 16.7657 8.31312 16.3891 7.90911C16.0126 7.50509 15.3798 7.48283 14.9758 7.85938L12.0497 10.5866L9.32245 7.66048C8.94589 7.25647 8.31312 7.23421 7.90911 7.61076C7.50509 7.98731 7.48283 8.62008 7.85938 9.0241L10.5866 11.9502L7.66048 14.6775C7.25647 15.054 7.23421 15.6868 7.61076 16.0908C7.98731 16.4948 8.62008 16.5171 9.0241 16.1405L11.9502 13.4133L14.6775 16.3394C15.054 16.7434 15.6868 16.7657 16.0908 16.3891C16.4948 16.0126 16.5171 15.3798 16.1405 14.9758L13.4133 12.0497L16.3394 9.32245Z" />
         <path
           clip-rule="evenodd"
