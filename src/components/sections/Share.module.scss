@@ -1,0 +1,11 @@
+.wrap-share {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+
+  svg {
+    width: 24p;
+    height: 24px;
+    margin-right: 10px;
+  }
+}

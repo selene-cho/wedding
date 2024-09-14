@@ -12,6 +12,7 @@ import Invitation from '@components/sections/Invitation';
 import Calendar from '@components/sections/Calendar';
 import Map from '@components/sections/Map';
 import Contact from '@components/sections/Contact';
+import Share from '@components/sections/Share';
 
 const cx = classNames.bind(styles);
 
@@ -89,6 +90,7 @@ export default function App() {
       <Calendar date={date} />
       <Map location={location} />
       <Contact groom={groom} bride={bride} />
+      <Share groomName={groom.name} brideName={bride.name} date={date} />
     </div>
   );
 }
