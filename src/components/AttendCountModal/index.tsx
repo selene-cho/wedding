@@ -10,9 +10,7 @@ export default function AttendCountModal({ wedding }: { wedding: Wedding }) {
   const haveSeenModal = localStorage.getItem('@have-seen-modal');
 
   useEffect(() => {
-    if (haveSeenModal) {
-      return;
-    }
+    if (haveSeenModal) return;
 
     open({
       title: `현재 참석자: ${wedding.attendCount}명`,
@@ -46,7 +44,7 @@ export default function AttendCountModal({ wedding }: { wedding: Wedding }) {
           },
         });
 
-        localStorage.setItem('@have-seen-item', 'true');
+        localStorage.setItem('@have-seen-modal', 'true');
         close();
       },
     });
