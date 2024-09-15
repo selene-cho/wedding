@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import classNames from 'classnames/bind';
 import { format, parseISO } from 'date-fns';
 import { ko } from 'date-fns/locale';
@@ -10,7 +11,7 @@ import Section from '@shared/Section';
 
 const cx = classNames.bind(styles);
 
-export default function Calendar({ date }: { date: string }) {
+export default memo(function Calendar({ date }: { date: string }) {
   const weddingDate = parseISO(date);
 
   return (
@@ -39,4 +40,4 @@ export default function Calendar({ date }: { date: string }) {
       />
     </Section>
   );
-}
+});
