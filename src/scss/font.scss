@@ -1,7 +1,8 @@
 @font-face {
   font-family: 'NanumDaHaengCe';
   src:
-    url('../assets/fonts/NanumDaHaengCe.woff2') format('woff2'),
-    url('../assets//fonts/NanumDaHaengCe.woff') format('woff'),
-    url('../assets/fonts/NanumDaHaengCe.ttf') format('truetype');
+    url('../assets/fonts/subset-NanumDaHaengCe.woff2') format('woff2'),
+    url('../assets//fonts/subset-NanumDaHaengCe.woff') format('woff'),
+    url('../assets/fonts/subset-NanumDaHaengCe.ttf') format('truetype');
+  font-display: swap;
 }
