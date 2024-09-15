@@ -1,9 +1,9 @@
-import { useQuery } from '@tanstack/react-query';
+import { useSuspenseQuery } from '@tanstack/react-query';
 import { Wedding } from '@models/wedding';
 import getWedding from '@/api/wedding';
 
 export default function useWedding() {
-  const { data, isPending, error } = useQuery<Wedding>({
+  const { data } = useSuspenseQuery<Wedding>({
     queryKey: ['wedding'],
     queryFn: () =>
       getWedding().then((response) => {
@@ -15,5 +15,5 @@ export default function useWedding() {
       }),
   });
 
-  return { wedding: data, loading: isPending, error };
+  return { wedding: data };
 }

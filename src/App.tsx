@@ -1,7 +1,3 @@
-import classNames from 'classnames/bind';
-import styles from './App.module.scss';
-
-import FullScreenMessage from '@shared/FullScreenMessage';
 import Heading from '@components/sections/Heading';
 import Video from '@components/sections/Video';
 import ImageGallery from '@components/sections/ImageGallery';
@@ -14,30 +10,10 @@ import Share from '@components/sections/Share';
 import AttendCountModal from '@components/AttendCountModal';
 import useWedding from './hooks/useWedding';
 
-const cx = classNames.bind(styles);
-
 export default function App() {
-  const { wedding, loading, error } = useWedding();
+  const { wedding } = useWedding();
 
-  if (loading) {
-    return (
-      <div>
-        <FullScreenMessage type="loading" />
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div>
-        <FullScreenMessage type="error" />
-      </div>
-    );
-  }
-
-  if (!wedding) {
-    return null;
-  }
+  if (!wedding) return;
 
   const {
     date,
@@ -49,7 +25,7 @@ export default function App() {
   } = wedding;
 
   return (
-    <div className={cx('container')}>
+    <div>
       <Heading date={date} />
       <Video />
       <Intro
