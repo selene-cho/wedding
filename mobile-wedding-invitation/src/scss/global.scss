@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+@import '@scss/font.scss';
+@import '@scss/reset.scss';
+@import '@scss/variable.scss';
+
+:root {
+  --font-sm: 0.875rem;
+  --font-reg: 1rem;
+  --font-lg: 1.125rem;
+  --font-xl: 1.25rem;
+  --font-2xl: 1.5rem;
+  --font-3xl: 1.75rem;
+
+  --black: #333;
+  --white: #fafafa;
+  --gray: #9d9d9d;
+
+  --dimmed: rgba(0, 0, 0, 0.8);
+
+  --pink1: #e6a4b4;
+  --pink2: #f3d7ca;
+  --beige: #f5eee6;
+}
+
+html {
+  font-size: 20px;
+}
+
+@media (max-width: $max-width) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 415px) {
+  html {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 400px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 390px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: $min-width) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  font-family: 'GangwonEduModu', sans-serif;
+  background-color: #efefef;
+  max-width: 100%;
+  min-height: 100vh;
+  font-size: var(--font-reg);
+}

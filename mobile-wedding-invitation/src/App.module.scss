@@ -1,0 +1,10 @@
+@import '@scss/variable.scss';
+
+.container {
+  margin: 0 auto;
+  min-width: $min-width;
+  max-width: $max-width;
+  min-height: 100vh;
+  background-color: var(--white);
+  padding: 30px 24px;
+}
