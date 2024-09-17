@@ -1,8 +1,8 @@
-export default function App() {
+import styles from './App.module.scss';
+import classNames from 'classnames/bind';
 
-  return (
-    <div>
-      App
-    </div>
-  );
+const cx = classNames.bind(styles);
+
+export default function App() {
+  return <div className={cx('container')}>App</div>;
 }
