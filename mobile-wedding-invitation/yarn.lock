@@ -234,6 +234,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@date-fns/tz@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@date-fns/tz@npm:1.0.2"
+  checksum: 10c0/d6939116dd64040517e4f19b72d535eac0e6d20d398a88a8353811e65c1d004fa18c34e4cb1fed727defcf008d61b2989e5261e51afe9aa62b38bdb0a9884ef7
+  languageName: node
+  linkType: hard
+
 "@esbuild/aix-ppc64@npm:0.21.5":
   version: 0.21.5
   resolution: "@esbuild/aix-ppc64@npm:0.21.5"
@@ -1916,6 +1923,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"date-fns@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "date-fns@npm:4.1.0"
+  checksum: 10c0/b79ff32830e6b7faa009590af6ae0fb8c3fd9ffad46d930548fbb5acf473773b4712ae887e156ba91a7b3dc30591ce0f517d69fd83bd9c38650fdc03b4e0bac8
+  languageName: node
+  linkType: hard
+
 "debug@npm:4, debug@npm:^4.1.0, debug@npm:^4.3.1, debug@npm:^4.3.2, debug@npm:^4.3.4":
   version: 4.3.7
   resolution: "debug@npm:4.3.7"
@@ -3532,6 +3546,7 @@ __metadata:
     "@types/react-dom": "npm:^18.3.0"
     "@vitejs/plugin-react": "npm:^4.3.1"
     classnames: "npm:^2.5.1"
+    date-fns: "npm:^4.1.0"
     eslint: "npm:^9.10.0"
     eslint-config-prettier: "npm:^9.1.0"
     eslint-plugin-prettier: "npm:^5.2.1"
@@ -3542,8 +3557,10 @@ __metadata:
     globals: "npm:^15.9.0"
     prettier: "npm:3.3.3"
     react: "npm:^18.3.1"
+    react-day-picker: "npm:^9.1.1"
     react-dom: "npm:^18.3.1"
     sass: "npm:^1.78.0"
+    swiper: "npm:^11.1.14"
     vite: "npm:^5.4.1"
   languageName: unknown
   linkType: soft
@@ -3894,6 +3911,18 @@ __metadata:
   version: 1.2.3
   resolution: "queue-microtask@npm:1.2.3"
   checksum: 10c0/900a93d3cdae3acd7d16f642c29a642aea32c2026446151f0778c62ac089d4b8e6c986811076e1ae180a694cedf077d453a11b58ff0a865629a4f82ab558e102
+  languageName: node
+  linkType: hard
+
+"react-day-picker@npm:^9.1.1":
+  version: 9.1.1
+  resolution: "react-day-picker@npm:9.1.1"
+  dependencies:
+    "@date-fns/tz": "npm:^1.0.2"
+    date-fns: "npm:^4.1.0"
+  peerDependencies:
+    react: ">=16.8.0"
+  checksum: 10c0/3ff1a4ac3d7c8e32896a31489db2e481672a67350038efe0034b493cd4a39230e10bef74727e9e7d12ce4344fa31382beb51d95ee5402aa2d0aff9d86bb9c370
   languageName: node
   linkType: hard
 
@@ -4416,6 +4445,13 @@ __metadata:
   version: 1.0.0
   resolution: "supports-preserve-symlinks-flag@npm:1.0.0"
   checksum: 10c0/6c4032340701a9950865f7ae8ef38578d8d7053f5e10518076e6554a9381fa91bd9c6850193695c141f32b21f979c985db07265a758867bac95de05f7d8aeb39
+  languageName: node
+  linkType: hard
+
+"swiper@npm:^11.1.14":
+  version: 11.1.14
+  resolution: "swiper@npm:11.1.14"
+  checksum: 10c0/a1075cbd2254aedd22b411ea03cbd7a91ba1cc79d7c2dc41f215e987811e449a2915a26b39fdfc1d7c08250fa2cfbe51d28476f834e75033c73ea357a4ac9f8d
   languageName: node
   linkType: hard
 
