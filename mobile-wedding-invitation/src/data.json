@@ -1,104 +1,135 @@
 {
-  "wedding": {
-    "id": 0,
-    "date": "2024-11-03T14:00:00",
-    "location": {
-      "lat": 37.400649,
-      "lng": 127.111378,
-      "name": "W스퀘어컨벤션 8층 채플홀",
-      "address": "경기도 성남시 분당구 판교역로 226번길 16 더블유스퀘어(삼평동 674번지)",
-      "link": "https://map.kakao.com/?map_type=TYPE_MAP&target=car&rt=,,506715,1050669&rt1=&rt2=%EC%88%98%EC%9B%90%EB%85%B8%EB%B8%94%EB%A0%88%EC%8A%A4%EC%9B%A8%EB%94%A9%EC%BB%A8%EB%B2%A4%EC%85%98&rtIds=,9846217",
-      "transportation": {
-        "subway": {
-          "line": ["신분당선", "경강선"],
-          "directions": "판교역 1번 출구, 직진 도보 6분 거리.(SK주유소 뒷건물)",
-          "shuttleBus": "판교역 1번 출구 셔틀버스 10분 간격 운행"
-        },
-        "bus": [
-          {
-            "direction": "야탑 -> 판교",
-            "stop": [
-              "330번, 350번, 357번, 380번 : 차그룹컨소시엄 하차",
-              "101번, 390번 : 엔씨소프트.안랩 하차"
-            ]
-          },
-          {
-            "direction": "수원 -> 판교",
-            "stop": "4000번 : 봇들마을5단지.테크노육교 하차"
-          }
-        ],
-        "car": {
-          "searchToNavi": "더블유스퀘어컨벤션",
-          "highway": [
-            {
-              "name": "경부고속도로",
-              "directions": "판교IC 차출 후 좌회전 -> 약700m 직진하여 사거리에서 우회전. (SK주유소 뒤)"
-            },
-            {
-              "name": "분당,수서간 도시고속도로",
-              "directions": "성남아트센터방면 지하차도 옆길 -> 벌말사거리에서 우회전 -> 판교테크노14사거리 판교(테크노밸리) 방면으로 좌회전 -> 삼환하이펙스 B동 방면 좌회전"
-            }
+  "id": 0,
+  "date": "2024-11-03T14:00:00",
+  "location": {
+    "lat": 37.400649,
+    "lng": 127.111378,
+    "name": "W스퀘어컨벤션 8층 채플홀",
+    "address": "경기도 성남시 분당구 판교역로 226번길 16 더블유스퀘어(삼평동 674번지)",
+    "link": "https://map.kakao.com/?map_type=TYPE_MAP&target=car&rt=,,506715,1050669&rt1=&rt2=%EC%88%98%EC%9B%90%EB%85%B8%EB%B8%94%EB%A0%88%EC%8A%A4%EC%9B%A8%EB%94%A9%EC%BB%A8%EB%B2%A4%EC%85%98&rtIds=,9846217",
+    "transportation": {
+      "subway": {
+        "line": ["신분당선", "경강선"],
+        "directions": "판교역 1번 출구, 직진 도보 6분 거리.(SK주유소 뒷건물)",
+        "shuttleBus": "판교역 1번 출구 셔틀버스 10분 간격 운행"
+      },
+      "bus": [
+        {
+          "direction": "야탑 -> 판교",
+          "stop": [
+            "330번, 350번, 357번, 380번 : 차그룹컨소시엄 하차",
+            "101번, 390번 : 엔씨소프트.안랩 하차"
           ]
         },
-        "parking": "예식장 건물 내 3~6층 300대, 외부 300대 주차 가능(2시간 무료)"
-      }
-    },
-    "groom": {
-      "name": "노진구",
-      "account": {
-        "bank": "신한",
-        "accountNumber": "110-356-123433"
-      },
-      "phoneNumber": "01050410168",
-      "parents": [
         {
-          "name": "노석구",
-          "account": {
-            "bank": "농협",
-            "accountNumber": "233331-51-061400"
-          },
-          "phoneNumber": "01067891234"
-        },
-        {
-          "name": "오진숙",
-          "account": {
-            "bank": "농협",
-            "accountNumber": "352-1252-4559-90"
-          },
-          "phoneNumber": "01098761234"
+          "direction": "수원 -> 판교",
+          "stop": "4000번 : 봇들마을5단지.테크노육교 하차"
         }
-      ]
-    },
-    "bride": {
-      "name": "신이슬",
-      "account": {
-        "bank": "우리",
-        "accountNumber": "422-235091-02-001",
-        "kakaoPayLink": "https://qr.kakaopay.com/Ej7nf2cxR"
+      ],
+      "car": {
+        "searchToNavi": "더블유스퀘어컨벤션",
+        "highway": [
+          {
+            "name": "경부고속도로",
+            "directions": "판교IC 차출 후 좌회전 -> 약700m 직진하여 사거리에서 우회전. (SK주유소 뒤)"
+          },
+          {
+            "name": "분당,수서간 도시고속도로",
+            "directions": "성남아트센터방면 지하차도 옆길 -> 벌말사거리에서 우회전 -> 판교테크노14사거리 판교(테크노밸리) 방면으로 좌회전 -> 삼환하이펙스 B동 방면 좌회전"
+          }
+        ]
       },
-      "phoneNumber": "01049481225",
-      "parents": [
-        {
-          "name": "신혼길",
-          "account": {
-            "bank": "카카오뱅크",
-            "accountNumber": "3333-1112-11932"
-          },
-          "phoneNumber": "01087654321"
-        },
-        {
-          "name": "순이음",
-          "account": {
-            "bank": "국민",
-            "accountNumber": "222-19-8842-472"
-          },
-          "phoneNumber": "01012345678"
-        }
-      ]
-    },
-    "message": {
-      "intro": "가장 진실된 것으로\n가장 당신을 위한 생각으로\n나의 마음을 가득 채워가고 싶다\n참 작은 마음이지만\n당신을 위한 것 중 가장 작은 것일지라도\n당신이 허락해준다면\n나 내 온 마음 그것이라 하겠다.\n\n이경선, <마음>",
-      "invitation": "소중한 분들을 초대합니다\n살랑이는 바람결에\n사랑이 묻어나는 계절입니다.\n여기 곱고 예쁜 두 사람이 사랑을 맺어\n인생의 반려자가 되려 합니다.\n새 인생을 시작하는 이 자리에 오셔서\n축복해 주시면 감사하겠습니다."
+      "parking": "예식장 건물 내 3~6층 300대, 외부 300대 주차 가능(2시간 무료)"
     }
-  }
+  },
+  "groom": {
+    "name": "노진구",
+    "account": {
+      "bank": "신한",
+      "accountNumber": "110-356-123433"
+    },
+    "phoneNumber": "01050410168",
+    "parents": [
+      {
+        "name": "노석구",
+        "account": {
+          "bank": "농협",
+          "accountNumber": "233331-51-061400"
+        },
+        "phoneNumber": "01067891234"
+      },
+      {
+        "name": "오진숙",
+        "account": {
+          "bank": "농협",
+          "accountNumber": "352-1252-4559-90"
+        },
+        "phoneNumber": "01098761234"
+      }
+    ]
+  },
+  "bride": {
+    "name": "신이슬",
+    "account": {
+      "bank": "우리",
+      "accountNumber": "422-235091-02-001",
+      "kakaoPayLink": "https://qr.kakaopay.com/Ej7nf2cxR"
+    },
+    "phoneNumber": "01049481225",
+    "parents": [
+      {
+        "name": "신혼길",
+        "account": {
+          "bank": "카카오뱅크",
+          "accountNumber": "3333-1112-11932"
+        },
+        "phoneNumber": "01087654321"
+      },
+      {
+        "name": "순이음",
+        "account": {
+          "bank": "국민",
+          "accountNumber": "222-19-8842-472"
+        },
+        "phoneNumber": "01012345678"
+      }
+    ]
+  },
+  "message": {
+    "intro": "사랑은 어떻게 쓰는거야?\n사랑은 쓰는 게 아니야, 느끼는 거지.\n\n- 곰돌이 푸 中 -",
+    "invitation": "소중한 분들을 초대합니다\n살랑이는 바람결에\n사랑이 묻어나는 계절입니다.\n여기 곱고 예쁜 두 사람이 사랑을 맺어\n인생의 반려자가 되려 합니다.\n새 인생을 시작하는 이 자리에 오셔서\n축복해 주시면 감사하겠습니다."
+  },
+  "galleryImages": [
+    "wedding_01",
+    "wedding_02",
+    "wedding_03",
+    "wedding_04",
+    "wedding_05",
+    "wedding_06",
+    "wedding_07",
+    "wedding_08",
+    "wedding_09",
+    "wedding_10",
+    "wedding_11",
+    "wedding_12",
+    "wedding_13",
+    "wedding_14",
+    "wedding_15",
+    "wedding_16",
+    "wedding_17",
+    "wedding_18",
+    "wedding_19",
+    "wedding_20",
+    "wedding_21",
+    "wedding_22",
+    "wedding_23",
+    "wedding_24",
+    "wedding_25",
+    "wedding_26",
+    "wedding_27",
+    "wedding_28",
+    "wedding_29",
+    "wedding_30",
+    "wedding_31"
+  ]
 }
