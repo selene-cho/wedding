@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 0;
+
+  .txt-title {
+    font-size: var(--font-2xl);
+    font-weight: bold;
+  }
+
+  .txt-subtitle {
+    font-size: var(--font-xl);
+  }
+}
