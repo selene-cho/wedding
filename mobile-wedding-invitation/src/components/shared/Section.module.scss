@@ -1,15 +1,19 @@
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   padding: 60px 0;
 
   .txt-title {
     font-size: var(--font-2xl);
     font-weight: bold;
+    color: var(--blue1);
+    margin-bottom: 35px;
   }
 
   .txt-subtitle {
     font-size: var(--font-xl);
+    color: var(--blue2);
+    letter-spacing: 3px;
   }
 }
