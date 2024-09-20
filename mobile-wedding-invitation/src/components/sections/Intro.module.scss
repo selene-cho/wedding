@@ -1,0 +1,120 @@
+.container {
+  padding-top: 40px;
+
+  .wrap-wedding-day {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.4;
+
+    .txt-day {
+      font-size: var(--font-xl);
+    }
+
+    .txt-date {
+      font-size: var(--font-lg);
+    }
+  }
+
+  .wrap-image {
+    img {
+      margin-bottom: 20px;
+      width: 100%;
+      object-fit: cover;
+      mask-image: linear-gradient(
+        180deg,
+        transparent,
+        rgba(0, 0, 0, 0.013) 1.1%,
+        rgba(0, 0, 0, 0.049) 2.3%,
+        rgba(0, 0, 0, 0.104) 3.58%,
+        rgba(0, 0, 0, 0.175) 4.94%,
+        rgba(0, 0, 0, 0.259) 6.34%,
+        rgba(0, 0, 0, 0.352) 7.78%,
+        rgba(0, 0, 0, 0.45) 9.26%,
+        rgba(0, 0, 0, 0.55) 10.74%,
+        rgba(0, 0, 0, 0.648) 12.22%,
+        rgba(0, 0, 0, 0.741) 13.66%,
+        rgba(0, 0, 0, 0.825) 15.06%,
+        rgba(0, 0, 0, 0.896) 16.42%,
+        rgba(0, 0, 0, 0.951) 17.7%,
+        rgba(0, 0, 0, 0.987) 18.9%,
+        rgb(0, 0, 0) 20%,
+        rgb(0, 0, 0) 80%,
+        rgba(0, 0, 0, 0.987) 81.1%,
+        rgba(0, 0, 0, 0.951) 82.3%,
+        rgba(0, 0, 0, 0.896) 83.58%,
+        rgba(0, 0, 0, 0.825) 84.94%,
+        rgba(0, 0, 0, 0.741) 86.34%,
+        rgba(0, 0, 0, 0.648) 87.78%,
+        rgba(0, 0, 0, 0.55) 89.26%,
+        rgba(0, 0, 0, 0.45) 90.74%,
+        rgba(0, 0, 0, 0.352) 92.22%,
+        rgba(0, 0, 0, 0.259) 93.66%,
+        rgba(0, 0, 0, 0.175) 95.06%,
+        rgba(0, 0, 0, 0.104) 96.42%,
+        rgba(0, 0, 0, 0.049) 97.7%,
+        rgba(0, 0, 0, 0.013) 98.9%,
+        transparent
+      );
+      -webkit-mask-image: linear-gradient(
+        180deg,
+        transparent,
+        rgba(0, 0, 0, 0.013) 1.1%,
+        rgba(0, 0, 0, 0.049) 2.3%,
+        rgba(0, 0, 0, 0.104) 3.58%,
+        rgba(0, 0, 0, 0.175) 4.94%,
+        rgba(0, 0, 0, 0.259) 6.34%,
+        rgba(0, 0, 0, 0.352) 7.78%,
+        rgba(0, 0, 0, 0.45) 9.26%,
+        rgba(0, 0, 0, 0.55) 10.74%,
+        rgba(0, 0, 0, 0.648) 12.22%,
+        rgba(0, 0, 0, 0.741) 13.66%,
+        rgba(0, 0, 0, 0.825) 15.06%,
+        rgba(0, 0, 0, 0.896) 16.42%,
+        rgba(0, 0, 0, 0.951) 17.7%,
+        rgba(0, 0, 0, 0.987) 18.9%,
+        rgb(0, 0, 0) 20%,
+        rgb(0, 0, 0) 80%,
+        rgba(0, 0, 0, 0.987) 81.1%,
+        rgba(0, 0, 0, 0.951) 82.3%,
+        rgba(0, 0, 0, 0.896) 83.58%,
+        rgba(0, 0, 0, 0.825) 84.94%,
+        rgba(0, 0, 0, 0.741) 86.34%,
+        rgba(0, 0, 0, 0.648) 87.78%,
+        rgba(0, 0, 0, 0.55) 89.26%,
+        rgba(0, 0, 0, 0.45) 90.74%,
+        rgba(0, 0, 0, 0.352) 92.22%,
+        rgba(0, 0, 0, 0.259) 93.66%,
+        rgba(0, 0, 0, 0.175) 95.06%,
+        rgba(0, 0, 0, 0.104) 96.42%,
+        rgba(0, 0, 0, 0.049) 97.7%,
+        rgba(0, 0, 0, 0.013) 98.9%,
+        transparent
+      );
+    }
+  }
+
+  .wrap-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+
+    .divide-dot {
+      margin: 0 10px;
+    }
+  }
+
+  .wrap-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: var(--font-sm);
+
+    .txt-time {
+      font-size: var(--font-sm);
+    }
+  }
+}
