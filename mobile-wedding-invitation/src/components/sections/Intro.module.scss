@@ -100,6 +100,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
+    font-size: var(--font-lg);
     font-weight: bold;
 
     .divide-dot {
@@ -112,6 +113,8 @@
     flex-direction: column;
     align-items: center;
     font-size: var(--font-sm);
+    line-height: 1.8;
+    letter-spacing: 0.8px;
 
     .txt-time {
       font-size: var(--font-sm);
