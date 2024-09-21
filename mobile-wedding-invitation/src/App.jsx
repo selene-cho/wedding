@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import data from '@/data.json';
 import Intro from '@sections/Intro';
 import Greetings from '@sections/Greetings';
+import Gallery from '@sections/Gallery';
 
 import styles from './App.module.scss';
 
@@ -28,6 +29,7 @@ export default function App() {
         brideParents={bride.parents}
         subImg={galleryImages[9]}
       />
+      <Gallery images={galleryImages} />
     </div>
   );
 }
