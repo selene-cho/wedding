@@ -29,9 +29,7 @@
   --groom: #7c93c3;
   --bride: #e6a4b4;
 
-  --wedding_month: #5ca0d3;
-  --wedding_day: #e6a4b4;
-  --sunday: #e6a4b4;
+  --point: #e6a4b4;
 }
 
 html {
@@ -84,14 +82,15 @@ body {
 
   --rdp-font-family: 'GangwonEduModu', sans-serif;
   --rdp-accent-color: var(--blue2);
-  --rdp-accent-background-color: var(--wedding_day);
+  --rdp-accent-background-color: var(--point);
   --rdp-today-color: none;
+  --rdp-selected-font: bold var(--font-sm) 'GangwonEduModu', sans-serif;
   --rdp-selected-border: none;
-  --rdp-day-font: 400 var(--font-reg) 'GangwonEduModu', sans-serif;
+  --rdp-day-font: 400 var(--font-sm) 'GangwonEduModu', sans-serif;
   --rdp-weekday-font: bold var(--font-reg) 'GangwonEduModu', sans-serif;
   --rdp-weekday-opacity: 0.55;
-  --rdp-day-width: 2rem;
-  --rdp-day-height: 2rem;
+  --rdp-day-width: 1.8rem;
+  --rdp-day-height: 1.8rem;
   --rdp-weekday-padding: 0.5rem 0 1rem;
 
   .rdp-month {
@@ -102,18 +101,18 @@ body {
     }
 
     .rdp-weekday:first-child {
-      color: var(--sunday);
+      color: var(--point);
     }
 
     .rdp-day {
       pointer-events: none;
 
       &:first-child {
-        color: var(--sunday);
+        color: var(--point);
       }
 
       .rdp-day_button {
-        margin: 0.2rem 0.15rem;
+        margin: 0.3rem 0.2rem;
         padding-top: 3px;
       }
     }
