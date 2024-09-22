@@ -4,9 +4,10 @@ import data from '@/data.json';
 import Intro from '@sections/Intro';
 import Greetings from '@sections/Greetings';
 import Gallery from '@sections/Gallery';
+import Calendar from '@sections/Calendar';
+import DdayCalculator from '@sections/DdayCalculator';
 
 import styles from './App.module.scss';
-import Calendar from './components/sections/Calendar';
 
 const cx = classNames.bind(styles);
 
@@ -32,6 +33,11 @@ export default function App() {
       />
       <Gallery images={galleryImages} />
       <Calendar date={date} />
+      <DdayCalculator
+        date={date}
+        groomName={groom.name}
+        brideName={bride.name}
+      />
     </div>
   );
 }

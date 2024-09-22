@@ -1,0 +1,48 @@
+.container {
+  padding-top: 0;
+
+  .icon-wedding {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .wrap-dday {
+    display: flex;
+    padding-top: 30px;
+
+    .wrap-txt {
+      display: flex;
+      align-items: baseline;
+      margin-right: 10px;
+
+      .txt-time {
+        font-size: var(--font-lg);
+        margin-right: 1px;
+      }
+      .txt-time_unit {
+        font-size: var(--font-xs);
+      }
+    }
+  }
+
+  .wrap-caption {
+    margin-top: 20px;
+    font-size: var(--font-sm);
+    letter-spacing: 0.8px;
+
+    .txt-name {
+      font-weight: bold;
+    }
+
+    .txt-heart {
+      margin: 0 3px;
+      font-size: var(--font-xs);
+      color: var(--bride);
+    }
+
+    .txt-dday {
+      font-weight: bold;
+      color: var(--blue1);
+    }
+  }
+}
