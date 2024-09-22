@@ -1,0 +1,44 @@
+@import '@scss/variable.scss';
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  min-width: $min-width;
+  max-width: $max-width;
+
+  --swiper-navigation-size: 24px;
+  --swiper-navigation-color: var(--skyblue);
+  --swiper-navigation-sides-offset: 20px;
+
+  --swiper-pagination-bullet-inactive-color: var(--gray);
+  --swiper-pagination-color: var(--skyblue);
+  --swiper-pagination-left: auto;
+  --swiper-pagination-bottom: 30px;
+
+  .swiper-wrapper {
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .swiper-pagination-bullets-dynamic {
+    .swiper-pagination-bullet-active-prev,
+    .swiper-pagination-bullet-active-next {
+      transform: scale(0.88);
+    }
+
+    .swiper-pagination-bullet-active-prev-prev,
+    .swiper-pagination-bullet-active-next-next {
+      transform: scale(0.66);
+    }
+  }
+}

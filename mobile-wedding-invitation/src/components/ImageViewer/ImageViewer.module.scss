@@ -1,0 +1,13 @@
+.icon-close {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  width: 20px;
+  height: 20px;
+  fill: var(--skyblue);
+  z-index: 2;
+
+  :hover {
+    cursor: pointer;
+  }
+}

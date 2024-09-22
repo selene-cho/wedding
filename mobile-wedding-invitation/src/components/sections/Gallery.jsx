@@ -3,57 +3,78 @@ import classNames from 'classnames/bind';
 
 import Section from '@shared/Section';
 import styles from './Gallery.module.scss';
+import ImageViewer from '../ImageViewer';
 
 const cx = classNames.bind(styles);
 
 export default function Gallery({ images }) {
-  const [isOpened, setIsOpened] = useState(false);
+  const [isOpenedViewMore, setIsOpenedViewMore] = useState(false);
+  const [selectedIdx, setSelectedIdx] = useState(-1);
 
-  function handleClickPicture() {
-    return;
+  const open = selectedIdx > -1;
+
+  function handleClickImage(idx) {
+    setSelectedIdx(idx);
+  }
+
+  function handleClose() {
+    setSelectedIdx(-1);
   }
 
   function handleClickViewMore() {
-    setIsOpened((prev) => !prev);
+    setIsOpenedViewMore((prev) => !prev);
   }
 
   return (
-    <Section title="갤러리" subtitle="gallery">
-      <ul className={cx('wrap-images', { viewAll: isOpened })}>
-        {images.slice(0, images.length - 1).map((image, idx) => (
-          <li
-            key={idx}
+    <>
+      <Section title="갤러리" subtitle="gallery">
+        <ul className={cx('wrap-images', { viewAll: isOpenedViewMore })}>
+          {images.slice(0, images.length - 1).map((image, idx) => (
+            <li
+              key={idx}
+              className={cx(
+                'wrap-image',
+                { foldedView: idx < 9 },
+                idx >= 9 && (isOpenedViewMore ? 'fadeIn' : 'fadeOut'),
+              )}
+              onClick={() => handleClickImage(idx)}
+            >
+              <picture>
+                <source
+                  srcSet={`/images/w360/${image}_w360.webp`}
+                  type="image/webp"
+                />
+                <img
+                  src={`/images/w360/${image}_w360.jpg`}
+                  alt={`웨딩사진${idx + 1}`}
+                />
+              </picture>
+            </li>
+          ))}
+        </ul>
+        <div className={cx('wrap-view-more')}>
+          <div
             className={cx(
-              'wrap-image',
-              { foldedView: idx < 9 },
-              idx >= 9 && (isOpened ? 'fadeIn' : 'fadeOut'),
+              'gradientBar',
+              isOpenedViewMore ? 'fadeIn' : 'fadeOut',
             )}
-            onClick={handleClickPicture}
-          >
-            <picture>
-              <source
-                srcSet={`/images/w360/${image}_w360.webp`}
-                type="image/webp"
-              />
-              <img
-                src={`/images/w360/${image}_w360.jpg`}
-                alt={`웨딩사진${idx + 1}`}
-              />
-            </picture>
-          </li>
-        ))}
-      </ul>
-      <div className={cx('wrap-view-more')}>
-        <div
-          className={cx('gradientBar', isOpened ? 'fadeIn' : 'fadeOut')}
-        ></div>
-        <button className={cx('wrap-icon')} onClick={handleClickViewMore}>
-          <IconViewMore
-            className={cx('icon-view-more', { isOpened: isOpened })}
-          />
-        </button>
-      </div>
-    </Section>
+          ></div>
+          <button className={cx('wrap-icon')} onClick={handleClickViewMore}>
+            <IconViewMore
+              className={cx('icon-view-more', {
+                isOpenedViewMore: isOpenedViewMore,
+              })}
+            />
+          </button>
+        </div>
+      </Section>
+      <ImageViewer
+        images={images}
+        selectedIdx={selectedIdx}
+        open={open}
+        handleClose={handleClose}
+      />
+    </>
   );
 }
 
