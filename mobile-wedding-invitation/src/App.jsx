@@ -6,6 +6,7 @@ import Greetings from '@sections/Greetings';
 import Gallery from '@sections/Gallery';
 
 import styles from './App.module.scss';
+import Calendar from './components/sections/Calendar';
 
 const cx = classNames.bind(styles);
 
@@ -30,6 +31,7 @@ export default function App() {
         subImg={galleryImages[9]}
       />
       <Gallery images={galleryImages} />
+      <Calendar date={date} />
     </div>
   );
 }

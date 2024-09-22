@@ -16,16 +16,22 @@
   --black: #444;
   --white: #fafafa;
   --gray: #9d9d9d;
+  --lightgray: #e8e8e8;
   --darkgray: #535962;
 
+  --background_color: #efefef;
   --dimmed: rgba(0, 0, 0, 0.9);
-
-  --groom: #7c93c3;
-  --bride: #e6a4b4;
 
   --blue1: #5ca0d3;
   --blue2: #9eb8d9;
   --skyblue: #eef5ff;
+
+  --groom: #7c93c3;
+  --bride: #e6a4b4;
+
+  --wedding_month: #5ca0d3;
+  --wedding_day: #e6a4b4;
+  --sunday: #e6a4b4;
 }
 
 html {
@@ -68,4 +74,55 @@ body {
   max-width: 100%;
   min-height: 100vh;
   font-size: var(--font-reg);
+}
+
+/* react-day-picker */
+
+.rdp-root {
+  display: flex;
+  justify-content: center;
+
+  --rdp-font-family: 'GangwonEduModu', sans-serif;
+  --rdp-accent-color: var(--blue2);
+  --rdp-accent-background-color: var(--wedding_day);
+  --rdp-today-color: none;
+  --rdp-selected-border: none;
+  --rdp-day-font: 400 var(--font-reg) 'GangwonEduModu', sans-serif;
+  --rdp-weekday-font: bold var(--font-reg) 'GangwonEduModu', sans-serif;
+  --rdp-weekday-opacity: 0.55;
+  --rdp-day-width: 2rem;
+  --rdp-day-height: 2rem;
+  --rdp-weekday-padding: 0.5rem 0 1rem;
+
+  .rdp-month {
+    padding-bottom: 1.8rem;
+
+    .rdp-month_caption {
+      display: none;
+    }
+
+    .rdp-weekday:first-child {
+      color: var(--sunday);
+    }
+
+    .rdp-day {
+      pointer-events: none;
+
+      &:first-child {
+        color: var(--sunday);
+      }
+
+      .rdp-day_button {
+        margin: 0.2rem 0.15rem;
+        padding-top: 3px;
+      }
+    }
+
+    .rdp-selected .rdp-day_button {
+      width: 1.9rem;
+      height: 1.9rem;
+      background-color: var(--rdp-accent-background-color);
+      color: var(--white);
+    }
+  }
 }
