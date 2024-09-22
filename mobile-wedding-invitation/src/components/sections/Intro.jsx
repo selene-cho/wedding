@@ -36,7 +36,7 @@ export default function Intro({
       </div>
       <div className={cx('wrap-info')}>
         <div className={cx('txt-time')}>
-          {format(parseISO(date), 'yyyy년 MM월 d일 eeee bbb h시', {
+          {format(parseISO(date), 'yyyy년 MM월 d일, eeee bbb h시', {
             locale: ko,
           })}
         </div>
