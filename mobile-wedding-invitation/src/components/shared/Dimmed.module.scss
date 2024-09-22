@@ -1,0 +1,11 @@
+@import '@scss/variable.scss';
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--dimmed);
+  z-index: $dimmed-zindex;
+}
