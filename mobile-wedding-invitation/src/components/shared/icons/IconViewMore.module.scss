@@ -1,0 +1,11 @@
+.icon-view-more {
+  width: 24px;
+  height: 24px;
+  fill: var(--gray);
+  transform: rotate(0deg);
+  transition: all 0.5s linear;
+
+  &.isOpenedViewMore {
+    transform: rotate(-180deg);
+  }
+}

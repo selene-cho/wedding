@@ -2,8 +2,9 @@ import { useState } from 'react';
 import classNames from 'classnames/bind';
 
 import Section from '@shared/Section';
+import ImageViewer from '@components/ImageViewer';
+import IconViewMore from '@icons/IconViewMore';
 import styles from './Gallery.module.scss';
-import ImageViewer from '../ImageViewer';
 
 const cx = classNames.bind(styles);
 
@@ -60,11 +61,7 @@ export default function Gallery({ images }) {
             )}
           ></div>
           <button className={cx('wrap-icon')} onClick={handleClickViewMore}>
-            <IconViewMore
-              className={cx('icon-view-more', {
-                isOpenedViewMore: isOpenedViewMore,
-              })}
-            />
+            <IconViewMore isOpenedViewMore={isOpenedViewMore} />
           </button>
         </div>
       </Section>
@@ -75,14 +72,5 @@ export default function Gallery({ images }) {
         handleClose={handleClose}
       />
     </>
-  );
-}
-
-function IconViewMore({ className }) {
-  return (
-    <svg className={className} viewBox="0 0 96 96">
-      <title />
-      <path d="M81.8457,25.3876a6.0239,6.0239,0,0,0-8.45.7676L48,56.6257l-25.396-30.47a5.999,5.999,0,1,0-9.2114,7.6879L43.3943,69.8452a5.9969,5.9969,0,0,0,9.2114,0L82.6074,33.8431A6.0076,6.0076,0,0,0,81.8457,25.3876Z" />
-    </svg>
   );
 }
