@@ -10,6 +10,7 @@ export default defineConfig({
       { find: '@scss', replacement: '/src/scss' },
       { find: '@components', replacement: '/src/components' },
       { find: '@shared', replacement: '/src/components/shared' },
+      { find: '@icons', replacement: '/src/components/shared/icons' },
       { find: '@sections', replacement: '/src/components/sections' },
       { find: '@utils', replacement: '/src/utils' },
     ],
