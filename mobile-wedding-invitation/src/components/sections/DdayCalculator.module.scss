@@ -9,6 +9,8 @@
   .wrap-dday {
     display: flex;
     padding-top: 30px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--lightgray);
 
     .wrap-txt {
       display: flex;
