@@ -5,6 +5,7 @@
   margin: 0 24px;
 
   .txt-wedding_hall {
+    font-weight: bold;
   }
   .txt-address {
     text-align: center;
@@ -14,16 +15,6 @@
   }
 }
 
-.wrap-map {
-  position: relative;
-  width: 100%;
-
-  .map {
-    width: 100%;
-    height: 350px;
-    margin: 20px 0 30px;
-  }
-}
 .btn-map-modal {
   margin: 0 auto;
   margin-bottom: 30px;
@@ -75,4 +66,67 @@
 .wedding_hall_map-img {
   width: 100%;
   margin: 0 auto;
+}
+
+.wrap-transportation {
+  width: 90%;
+  margin-top: 30px;
+
+  .wrap-vehicle {
+    margin-top: 10px;
+    padding: 20px 0;
+    line-height: 1.8;
+    border-top: 1px solid var(--lightgray);
+
+    .txt-vehicle {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .txt-way2come {
+      font-size: var(--font-xs);
+
+      .subway-line {
+        color: var(--white);
+        padding: 4px 7px;
+        border-radius: 15px;
+        margin-right: 5px;
+
+        &:first-child {
+          background-color: #d31145;
+        }
+        &:nth-child(2) {
+          background-color: #0054a6;
+        }
+      }
+
+      .wrap-bus {
+        margin-bottom: 10px;
+
+        .txt-bus-direction {
+          background-color: var(--darkgray);
+          color: var(--white);
+          padding: 4px 7px;
+          border-radius: 15px;
+        }
+      }
+
+      .wrap-car {
+        margin-bottom: 10px;
+
+        .txt-way {
+          background-color: var(--darkgray);
+          color: var(--white);
+          padding: 4px 7px;
+          border-radius: 15px;
+        }
+      }
+    }
+
+    .wrap-parking {
+      .txt-parking {
+        font-size: var(--font-xs);
+      }
+    }
+  }
 }

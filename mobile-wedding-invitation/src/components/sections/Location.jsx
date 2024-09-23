@@ -1,68 +1,21 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import classNames from 'classnames/bind';
 
 import Section from '@shared/Section';
 import Modal from '@shared/Modal';
+import KakaoMap from '@components/KakaoMap';
 
 import styles from './Location.module.scss';
 
 const cx = classNames.bind(styles);
 
 export default function Location({ location }) {
+  const { subway, bus, car, parking } = location.transportation;
   const formattedLocationAddress = location.address.replace('(', '\n(');
-  const mapContainerRef = useRef(null);
 
-  const linkKakaoMap = `https://map.kakao.com/link/to/${location.transportation.car.searchToNavi},${location.lat},${location.lng}`;
-  const linkNaverMap = `https://map.naver.com/p?title=${location.transportation.car.searchToNavi}&lng=${location.lng}&lat=${location.lat}`;
-  const linkTMap = `tmap://route?goalname=${encodeURIComponent(location.transportation.car.searchToNavi)}&goalx=${location.lng}&goaly=${location.lat}&style=1`;
-
-  useEffect(() => {
-    const script = document.createElement('script');
-
-    script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${import.meta.env.VITE_KAKAO_APP_KEY}&autoload=false`;
-    script.async = true;
-
-    document.head.appendChild(script);
-
-    script.onload = () => {
-      window.kakao.maps.load(() => {
-        const position = new window.kakao.maps.LatLng(
-          location.lat,
-          location.lng,
-        );
-
-        const mapOptions = {
-          center: position,
-          level: 3,
-        };
-
-        const map = new window.kakao.maps.Map(
-          mapContainerRef.current,
-          mapOptions,
-        );
-
-        const markerImageSrc = '/icons/weddingLocation.svg';
-        const markerImageSize = new window.kakao.maps.Size(48, 48);
-        const markerImageOption = {
-          offset: new window.kakao.maps.Point(15, 40),
-          alt: '마커 이미지 아이콘',
-        };
-
-        const markerImage = new window.kakao.maps.MarkerImage(
-          markerImageSrc,
-          markerImageSize,
-          markerImageOption,
-        );
-
-        const marker = new window.kakao.maps.Marker({
-          position,
-          image: markerImage,
-        });
-
-        marker.setMap(map);
-      });
-    };
-  }, [location]);
+  const linkKakaoMap = `https://map.kakao.com/link/to/${car.searchToNavi},${location.lat},${location.lng}`;
+  const linkNaverMap = `https://map.naver.com/p?title=${car.searchToNavi}&lng=${location.lng}&lat=${location.lat}`;
+  const linkTMap = `tmap://route?goalname=${encodeURIComponent(car.searchToNavi)}&goalx=${location.lng}&goaly=${location.lat}&style=1`;
 
   const [isOpenedModal, setIsOpenedModal] = useState(false);
 
@@ -77,14 +30,12 @@ export default function Location({ location }) {
           <div className={cx('txt-wedding_hall')}>{location.name}</div>
           <div className={cx('txt-address')}>{formattedLocationAddress}</div>
         </div>
-        <div className={cx('wrap-map')}>
-          <div className={cx('map')} ref={mapContainerRef}></div>
-        </div>
+        <KakaoMap location={location} />
         <button
           className={cx('btn-map-modal')}
           onClick={() => handleClickMapModal()}
         >
-          약도 보러가기
+          약도 이미지 보기
         </button>
         <div className={cx('wrap-btns')}>
           <button className={cx('btn')}>
@@ -105,6 +56,54 @@ export default function Location({ location }) {
             </a>
             <div className={cx('txt-appName')}>TMAP</div>
           </button>
+        </div>
+        <div className={cx('wrap-transportation')}>
+          <div className={cx('wrap-vehicle')}>
+            <div className={cx('txt-vehicle')}>지하철</div>
+            <div className={cx('txt-way2come')}>
+              {subway.line.map((line, idx) => (
+                <span className={cx('subway-line')} key={idx}>
+                  {line}
+                </span>
+              ))}
+            </div>
+            <div className={cx('txt-way2come')}>- {subway.directions}</div>
+            <div className={cx('txt-way2come')}>- {subway.shuttleBus}</div>
+          </div>
+          <div className={cx('wrap-vehicle')}>
+            <div className={cx('txt-vehicle')}>버스</div>
+            <div className={cx('txt-way2come')}>
+              {bus.map((item, idx) => (
+                <div className={cx('wrap-bus')} key={idx}>
+                  <span className={cx('txt-bus-direction')}>
+                    {item.direction}
+                  </span>
+                  <ul>
+                    {item.stop.map((stop, idx) => (
+                      <li className={cx('txt-bus-stop')} key={idx}>
+                        - {stop}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className={cx('wrap-vehicle')}>
+            <div className={cx('txt-vehicle')}>자동차</div>
+            <div className={cx('txt-way2come')}>
+              {car.highway.map((way, idx) => (
+                <div className={cx('wrap-car')} key={idx}>
+                  <span className={cx('txt-way')}>{way.name}</span>
+                  <div>- {way.directions}</div>
+                </div>
+              ))}
+            </div>
+            <div className={cx('wrap-parking')}>
+              <div className={cx('txt-vehicle')}>주차</div>
+              <div className={cx('txt-parking')}>{parking}</div>
+            </div>
+          </div>
         </div>
       </Section>
       <Modal isOpened={isOpenedModal} handleClose={() => handleClickMapModal()}>
