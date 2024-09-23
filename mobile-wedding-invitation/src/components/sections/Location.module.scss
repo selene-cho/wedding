@@ -1,0 +1,78 @@
+.wrap-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 24px;
+
+  .txt-wedding_hall {
+  }
+  .txt-address {
+    text-align: center;
+    margin: 10px 5px;
+    font-size: var(--font-xs);
+    white-space: pre-wrap;
+  }
+}
+
+.wrap-map {
+  position: relative;
+  width: 100%;
+
+  .map {
+    width: 100%;
+    height: 350px;
+    margin: 20px 0 30px;
+  }
+}
+.btn-map-modal {
+  margin: 0 auto;
+  margin-bottom: 30px;
+  height: 36px;
+  padding: 8px 12px;
+  border: 1px solid var(--lightgray);
+  border-radius: 8px;
+  vertical-align: center;
+  background-color: white;
+  font-size: var(--font-sm);
+}
+
+.wrap-btns {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0 24px;
+
+  .btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 15px;
+
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 48px;
+      border-radius: 10px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+      img {
+        width: 100%;
+        height: 100%;
+        margin: 0 20px;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+    }
+
+    .txt-appName {
+      margin-top: 8px;
+      font-size: var(--font-xs);
+    }
+  }
+}
+
+.wedding_hall_map-img {
+  width: 100%;
+  margin: 0 auto;
+}
