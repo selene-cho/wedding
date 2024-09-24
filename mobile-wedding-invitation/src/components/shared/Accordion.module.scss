@@ -1,0 +1,42 @@
+.container {
+  position: relative;
+  width: 80%;
+  background-color: var(--background_color);
+  margin: 0 auto 20px;
+  border-radius: 8px;
+
+  &.isToggled {
+    box-shadow: var(--box-shadow);
+  }
+
+  .wrap-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+
+    .txt-label {
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    .btn-view-more {
+      display: flex;
+      justify-content: center;
+      margin-right: 24px;
+    }
+  }
+
+  .wrap-content {
+    height: 0;
+    opacity: 0;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+
+    &.isToggled {
+      height: 100%;
+      opacity: 1;
+    }
+  }
+}
