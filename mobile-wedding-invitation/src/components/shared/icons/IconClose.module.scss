@@ -8,8 +8,4 @@
   height: 20px;
   fill: var(--skyblue);
   z-index: $close-zindex;
-
-  :hover {
-    cursor: pointer;
-  }
 }
