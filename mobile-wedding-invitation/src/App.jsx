@@ -7,6 +7,7 @@ import Gallery from '@sections/Gallery';
 import Calendar from '@sections/Calendar';
 import DdayCalculator from '@sections/DdayCalculator';
 import Location from '@sections/Location';
+import Account from '@sections/Account';
 
 import styles from './App.module.scss';
 
@@ -40,6 +41,7 @@ export default function App() {
         brideName={bride.name}
       />
       <Location location={location} />
+      <Account groom={groom} bride={bride} />
     </div>
   );
 }
