@@ -5,7 +5,9 @@ import styles from './AccountInfo.module.scss';
 
 const cx = classNames.bind(styles);
 
-export default function AccountInfo({ name, bank, accountNumber, handleCopy }) {
+export default function AccountInfo({ name, account, handleCopy }) {
+  const { bank, accountNumber, kakaoPayLink } = account;
+
   return (
     <div className={cx('container')}>
       <div className={cx('wrap-info')}>
@@ -16,9 +18,13 @@ export default function AccountInfo({ name, bank, accountNumber, handleCopy }) {
         </div>
       </div>
       <div className={cx('wrap-btn')}>
-        <button className={cx('btn-kakaoPay')}>
-          <IconKakaoPay className={cx('icon-kakaoPay')} />
-        </button>
+        {kakaoPayLink && (
+          <button className={cx('btn-kakaoPay')}>
+            <a href={kakaoPayLink} target="_blank" rel="noreferrer noopener">
+              <IconKakaoPay className={cx('icon-kakaoPay')} />
+            </a>
+          </button>
+        )}
         <CopyToClipboard
           text={`${bank} ${accountNumber}`}
           onCopy={() => handleCopy()}
