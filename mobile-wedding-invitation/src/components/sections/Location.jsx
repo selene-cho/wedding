@@ -39,19 +39,19 @@ export default function Location({ location }) {
         </button>
         <div className={cx('wrap-btns')}>
           <button className={cx('btn')}>
-            <a href={linkKakaoMap} target="_blank">
+            <a href={linkKakaoMap} target="_blank" rel="noreferrer noopener">
               <img src="/icons/kakaoMap.png" alt="카카오 지도" />
             </a>
             <div className={cx('txt-appName')}>KAKAO 지도</div>
           </button>
           <button className={cx('btn')}>
-            <a href={linkNaverMap} target="_blank">
+            <a href={linkNaverMap} target="_blank" rel="noreferrer noopener">
               <img src="/icons/naverMap.png" alt="네이버 지도" />
             </a>
             <div className={cx('txt-appName')}>NAVER 지도</div>
           </button>
           <button className={cx('btn')}>
-            <a href={linkTMap} target="_blank">
+            <a href={linkTMap} target="_blank" rel="noreferrer noopener">
               <img src="/icons/tmap.png" alt="티맵로고" />
             </a>
             <div className={cx('txt-appName')}>TMAP</div>

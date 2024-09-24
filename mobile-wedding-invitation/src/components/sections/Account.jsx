@@ -35,16 +35,14 @@ export default function Contact({ groom, bride }) {
       <Accordion label="신랑측 계좌번호">
         <AccountInfo
           name={groom.name}
-          bank={groom.account.bank}
-          accountNumber={groom.account.accountNumber}
+          account={groom.account}
           handleCopy={handleCopy}
         />
         {groom.parents.map((parents, idx) => (
           <AccountInfo
             key={idx}
             name={parents.name}
-            bank={parents.account.bank}
-            accountNumber={parents.account.accountNumber}
+            account={parents.account}
             handleCopy={handleCopy}
           />
         ))}
@@ -52,16 +50,14 @@ export default function Contact({ groom, bride }) {
       <Accordion label="신부측 계좌번호">
         <AccountInfo
           name={bride.name}
-          bank={bride.account.bank}
-          accountNumber={bride.account.accountNumber}
+          account={bride.account}
           handleCopy={handleCopy}
         />
         {bride.parents.map((parents, idx) => (
           <AccountInfo
             key={idx}
             name={parents.name}
-            bank={parents.account.bank}
-            accountNumber={parents.account.accountNumber}
+            account={parents.account}
             handleCopy={handleCopy}
           />
         ))}
