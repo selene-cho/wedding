@@ -17,6 +17,15 @@
   margin-bottom: 20px;
 }
 
+.wrap-image {
+  margin: 35px 0 10px;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
 .wrap-name {
   display: flex;
   line-height: 1.7;
@@ -75,11 +84,14 @@
   }
 }
 
-.wrap-image {
-  margin: 35px 0 10px;
-
-  img {
-    width: 100%;
-    object-fit: cover;
-  }
+.btn-contact {
+  height: 40px;
+  padding: 0 15px;
+  margin-top: 20px;
+  border: 1px solid var(--blue2);
+  border-radius: 8px;
+  font-size: var(--font-sm);
+  background-color: var(--white);
+  color: var(--darkgray);
+  box-shadow: var(--box-shadow);
 }

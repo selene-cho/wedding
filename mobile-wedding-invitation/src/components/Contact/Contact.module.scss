@@ -1,0 +1,36 @@
+@import '@scss/variable.scss';
+
+.container {
+  color: var(--beige);
+  min-width: calc($min-width * 0.7);
+  max-width: calc($max-width * 0.7);
+  width: 80vw;
+
+  .wrap-relationship {
+    margin-bottom: 50px;
+
+    .wrap-title {
+      display: flex;
+      align-items: flex-end;
+      margin: 10px 0;
+      padding: 10px 0;
+      border-bottom: 1px dotted var(--beige);
+
+      span {
+        &:first-child {
+          margin-right: 10px;
+        }
+
+        &:last-child {
+          font-size: var(--font-xs);
+          letter-spacing: 3px;
+          color: var(--gray);
+        }
+      }
+    }
+
+    .wrap-contactInfo {
+      padding: 0 5px;
+    }
+  }
+}

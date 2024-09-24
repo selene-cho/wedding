@@ -1,0 +1,40 @@
+.container {
+  display: grid;
+  grid-template-columns: 35% 20% 45%;
+  column-gap: 0.2rem;
+  justify-content: space-between;
+  align-items: center;
+  margin: 25px 0;
+  padding-right: 5px;
+
+  .txt-relationship {
+    font-size: var(--font-xs);
+  }
+
+  .txt-name {
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .wrap-btns {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 0.875rem;
+
+    .contact-btn {
+      width: 1.125rem;
+      height: 1.125rem;
+
+      .icon-phone {
+        &.groom {
+          fill: var(--groom);
+        }
+
+        &.bride {
+          fill: var(--bride);
+        }
+      }
+    }
+  }
+}

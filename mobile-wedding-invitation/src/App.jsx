@@ -28,8 +28,10 @@ export default function App() {
       <Greetings
         message={message}
         groomName={groom.name}
+        groomPhoneNumber={groom.phoneNumber}
         groomParents={groom.parents}
         brideName={bride.name}
+        bridePhoneNumber={bride.phoneNumber}
         brideParents={bride.parents}
         subImg={galleryImages[9]}
       />
