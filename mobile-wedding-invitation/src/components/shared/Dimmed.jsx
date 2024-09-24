@@ -3,6 +3,6 @@ import styles from './Dimmed.module.scss';
 
 const cx = classNames.bind(styles);
 
-export default function Dimmed({ children }) {
-  return <div className={cx('container')}>{children}</div>;
+export default function Dimmed({ children, light = false }) {
+  return <div className={cx('container', { light })}>{children}</div>;
 }
