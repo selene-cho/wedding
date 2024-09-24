@@ -12,7 +12,7 @@ export default function Modal({ children, isOpened = false, handleClose }) {
 
   return (
     <Dimmed>
-      <IconClose handleClose={handleClose} />
+      <IconClose fullscreen={true} handleClose={handleClose} />
       <div className={cx('container')}>{children}</div>
     </Dimmed>
   );

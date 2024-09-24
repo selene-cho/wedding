@@ -20,7 +20,7 @@ export default function ImageViewer({
 
   return (
     <Dimmed>
-      <IconClose handleClose={handleClose} />
+      <IconClose fullscreen={true} handleClose={handleClose} />
       <Swiper
         modules={[Navigation, Pagination, EffectFade]}
         slidesPerView={1}
