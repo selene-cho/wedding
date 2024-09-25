@@ -16,7 +16,12 @@ export default function ImageViewer({
   open = false,
   handleClose,
 }) {
-  if (!open) return;
+  if (!open) {
+    document.body.style.overflowY = 'auto';
+    return;
+  }
+
+  document.body.style.overflowY = 'hidden';
 
   return (
     <Dimmed>

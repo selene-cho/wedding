@@ -13,7 +13,12 @@ export default function Modal({
   handleClose,
   light,
 }) {
-  if (!isOpened) return;
+  if (!isOpened) {
+    document.body.style.overflowY = 'auto';
+    return;
+  }
+
+  document.body.style.overflowY = 'hidden';
 
   return (
     <Dimmed light={light}>
