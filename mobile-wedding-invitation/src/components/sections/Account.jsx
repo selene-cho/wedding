@@ -17,7 +17,12 @@ export default function Contact({ groom, bride }) {
 
     setToasts((prev) => [
       ...prev,
-      { id, toasted: true, message: '복사가 완료 되었습니다 😉' },
+      {
+        id,
+        toasted: true,
+        type: 'success',
+        message: '복사가 완료 되었습니다 😉',
+      },
     ]);
   }
 
@@ -62,7 +67,7 @@ export default function Contact({ groom, bride }) {
           />
         ))}
       </Accordion>
-      <Toast toasts={toasts} handleClose={handleClose} success />
+      <Toast toasts={toasts} handleClose={handleClose} />
     </Section>
   );
 }

@@ -6,7 +6,7 @@ import styles from './Toast.module.scss';
 
 const cx = classNames.bind(styles);
 
-export default function Toast({ toasts, handleClose, success, warn }) {
+export default function Toast({ toasts, handleClose }) {
   useEffect(() => {
     toasts.forEach((toast) => {
       if (toast.toasted) {
@@ -24,10 +24,8 @@ export default function Toast({ toasts, handleClose, success, warn }) {
       {toasts.map((toast) => (
         <li
           key={toast.id}
-          className={cx('wrap-toast', {
+          className={cx('wrap-toast', toast.type, {
             toasted: toast.toasted,
-            success,
-            warn,
           })}
         >
           <div className={cx('txt-notice')}>{toast.message}</div>
