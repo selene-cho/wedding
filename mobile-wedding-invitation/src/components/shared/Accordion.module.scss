@@ -1,12 +1,22 @@
 .container {
   position: relative;
   width: 80%;
-  background-color: var(--background_color);
+  background-color: var(--background-color);
   margin: 0 auto 20px;
   border-radius: 8px;
 
   &.isToggled {
     box-shadow: var(--box-shadow);
+  }
+
+  &.groom {
+    background-color: var(--skyblue);
+    border: 1px solid var(--groom);
+  }
+
+  &.bride {
+    background-color: var(--pink);
+    border: 1px solid var(--bride);
   }
 
   .wrap-label {

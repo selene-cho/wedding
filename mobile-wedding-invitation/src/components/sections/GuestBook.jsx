@@ -82,7 +82,7 @@ export default function GuestBook() {
           setIsOpenedPostModal={setIsOpenedPostModal}
         />
       </Modal>
-      <Toast toasts={toasts} handleClose={handleCloseToast} success />
+      <Toast toasts={toasts} handleClose={handleCloseToast} />
     </Section>
   );
 }

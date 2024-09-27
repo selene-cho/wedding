@@ -54,6 +54,14 @@
         }
       }
 
+      &.bride {
+        background-color: var(--bride);
+
+        .icon-clipboard {
+          fill: var(--bride);
+        }
+      }
+
       &.btn-kakaoPay {
         background-color: #ffeb00;
 

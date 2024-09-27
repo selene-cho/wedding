@@ -5,7 +5,12 @@ import styles from './AccountInfo.module.scss';
 
 const cx = classNames.bind(styles);
 
-export default function AccountInfo({ name, account, handleCopy }) {
+export default function AccountInfo({
+  name,
+  account,
+  handleCopy,
+  bride = false,
+}) {
   const { bank, accountNumber, kakaoPayLink } = account;
 
   return (
@@ -29,7 +34,7 @@ export default function AccountInfo({ name, account, handleCopy }) {
           text={`${bank} ${accountNumber}`}
           onCopy={() => handleCopy()}
         >
-          <button className={cx('btn-clipboard')}>
+          <button className={cx('btn-clipboard', { bride })}>
             <IconClipboard className={cx('icon-clipboard')} />
           </button>
         </CopyToClipboard>

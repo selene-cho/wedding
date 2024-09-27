@@ -6,14 +6,19 @@ import styles from './Accordion.module.scss';
 
 const cx = classNames.bind(styles);
 
-export default function Accordion({ label, children }) {
+export default function Accordion({
+  label,
+  children,
+  groom = false,
+  bride = false,
+}) {
   const [isToggled, setIsToggled] = useState(false);
 
   function handleClickAccordion() {
     setIsToggled((prev) => !prev);
   }
   return (
-    <div className={cx('container', { isToggled })}>
+    <div className={cx('container', { isToggled, groom, bride })}>
       <div className={cx('wrap-label')}>
         <div className={cx('txt-label')}>{label}</div>
         <button className={cx('btn-view-more')} onClick={handleClickAccordion}>

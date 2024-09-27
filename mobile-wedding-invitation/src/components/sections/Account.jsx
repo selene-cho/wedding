@@ -13,15 +13,13 @@ export default function Contact({ groom, bride, image }) {
   const [toasts, setToasts] = useState([]);
 
   function handleCopy() {
-    const id = Date.now();
-
     setToasts((prev) => [
       ...prev,
       {
-        id,
+        id: Date.now(),
         toasted: true,
         type: 'success',
-        message: '복사가 완료 되었습니다 😉',
+        message: '복사가 완료되었습니다 😉',
       },
     ]);
   }
@@ -38,7 +36,7 @@ export default function Contact({ groom, bride, image }) {
           <div>계좌번호를 기재하였습니다.</div>
           <div>너그러운 마음으로 양해 부탁드립니다.</div>
         </div>
-        <Accordion label="신랑측 계좌번호">
+        <Accordion label="신랑측 계좌번호" groom>
           <AccountInfo
             name={groom.name}
             account={groom.account}
@@ -53,11 +51,12 @@ export default function Contact({ groom, bride, image }) {
             />
           ))}
         </Accordion>
-        <Accordion label="신부측 계좌번호">
+        <Accordion label="신부측 계좌번호" bride>
           <AccountInfo
             name={bride.name}
             account={bride.account}
             handleCopy={handleCopy}
+            bride
           />
           {bride.parents.map((parents, idx) => (
             <AccountInfo
@@ -65,10 +64,10 @@ export default function Contact({ groom, bride, image }) {
               name={parents.name}
               account={parents.account}
               handleCopy={handleCopy}
+              bride
             />
           ))}
         </Accordion>
-
         <Toast toasts={toasts} handleClose={handleClose} />
       </Section>
       <picture className={cx('wrap-image')}>
