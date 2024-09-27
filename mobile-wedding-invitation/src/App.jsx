@@ -10,6 +10,8 @@ import Location from '@sections/Location';
 import Account from '@sections/Account';
 import GuestBook from '@sections/GuestBook';
 import Share from '@sections/Share';
+import Footer from '@components/Footer';
+import MusicBar from '@components/MusicBar';
 
 import styles from './App.module.scss';
 
@@ -20,6 +22,7 @@ export default function App() {
 
   return (
     <div className={cx('container')}>
+      <MusicBar />
       <Intro
         date={date}
         mainImg={galleryImages[0]}
@@ -57,6 +60,7 @@ export default function App() {
         brideName={bride.name}
         location={location.name}
       />
+      <Footer />
     </div>
   );
 }
