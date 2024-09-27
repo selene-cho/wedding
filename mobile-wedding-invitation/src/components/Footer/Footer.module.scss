@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  font-size: var(--font-xs);
+  color: var(--gray);
+
+  .txt-comment {
+    margin-bottom: 5px;
+  }
+
+  span {
+    font-size: 0.625rem;
+  }
+}
