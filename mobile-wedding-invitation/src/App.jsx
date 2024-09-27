@@ -44,7 +44,11 @@ export default function App() {
         brideName={bride.name}
       />
       <Location location={location} />
-      <Account groom={groom} bride={bride} />
+      <Account
+        groom={groom}
+        bride={bride}
+        image={galleryImages[galleryImages.length - 1]}
+      />
       <GuestBook />
     </div>
   );

@@ -9,7 +9,7 @@ import styles from './Account.module.scss';
 
 const cx = classNames.bind(styles);
 
-export default function Contact({ groom, bride }) {
+export default function Contact({ groom, bride, image }) {
   const [toasts, setToasts] = useState([]);
 
   function handleCopy() {
@@ -31,43 +31,50 @@ export default function Contact({ groom, bride }) {
   }
 
   return (
-    <Section title="마음 전하실 곳" subtitle="account">
-      <div className={cx('wrap-info')}>
-        <div>참석이 어려우신 분들을 위해</div>
-        <div>계좌번호를 기재하였습니다.</div>
-        <div>너그러운 마음으로 양해 부탁드립니다.</div>
-      </div>
-      <Accordion label="신랑측 계좌번호">
-        <AccountInfo
-          name={groom.name}
-          account={groom.account}
-          handleCopy={handleCopy}
-        />
-        {groom.parents.map((parents, idx) => (
+    <>
+      <Section title="마음 전하실 곳" subtitle="account">
+        <div className={cx('wrap-info')}>
+          <div>참석이 어려우신 분들을 위해</div>
+          <div>계좌번호를 기재하였습니다.</div>
+          <div>너그러운 마음으로 양해 부탁드립니다.</div>
+        </div>
+        <Accordion label="신랑측 계좌번호">
           <AccountInfo
-            key={idx}
-            name={parents.name}
-            account={parents.account}
+            name={groom.name}
+            account={groom.account}
             handleCopy={handleCopy}
           />
-        ))}
-      </Accordion>
-      <Accordion label="신부측 계좌번호">
-        <AccountInfo
-          name={bride.name}
-          account={bride.account}
-          handleCopy={handleCopy}
-        />
-        {bride.parents.map((parents, idx) => (
+          {groom.parents.map((parents, idx) => (
+            <AccountInfo
+              key={idx}
+              name={parents.name}
+              account={parents.account}
+              handleCopy={handleCopy}
+            />
+          ))}
+        </Accordion>
+        <Accordion label="신부측 계좌번호">
           <AccountInfo
-            key={idx}
-            name={parents.name}
-            account={parents.account}
+            name={bride.name}
+            account={bride.account}
             handleCopy={handleCopy}
           />
-        ))}
-      </Accordion>
-      <Toast toasts={toasts} handleClose={handleClose} />
-    </Section>
+          {bride.parents.map((parents, idx) => (
+            <AccountInfo
+              key={idx}
+              name={parents.name}
+              account={parents.account}
+              handleCopy={handleCopy}
+            />
+          ))}
+        </Accordion>
+
+        <Toast toasts={toasts} handleClose={handleClose} />
+      </Section>
+      <picture className={cx('wrap-image')}>
+        <source srcSet={`/images/${image}.webp`} type="image/webp" />
+        <img src={`/images/${image}.jpg`} alt="웨딩사진" />
+      </picture>
+    </>
   );
 }
