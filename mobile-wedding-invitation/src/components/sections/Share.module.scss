@@ -1,0 +1,39 @@
+.container {
+  background-color: var(--skyblue);
+
+  .wrap-share {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    .wrap-btn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: var(--font-xs);
+      font-weight: bold;
+
+      .icon-btn {
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+
+        &.btn-kakao {
+          background-color: #ffe812;
+          padding: 0.375rem;
+        }
+
+        &.btn-link {
+          background-color: var(--blue2);
+          fill: var(--white);
+          padding: 0.5rem;
+        }
+      }
+    }
+  }
+}

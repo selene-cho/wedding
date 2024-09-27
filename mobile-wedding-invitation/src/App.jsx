@@ -9,6 +9,7 @@ import DdayCalculator from '@sections/DdayCalculator';
 import Location from '@sections/Location';
 import Account from '@sections/Account';
 import GuestBook from '@sections/GuestBook';
+import Share from '@sections/Share';
 
 import styles from './App.module.scss';
 
@@ -50,6 +51,12 @@ export default function App() {
         image={galleryImages[galleryImages.length - 1]}
       />
       <GuestBook />
+      <Share
+        date={date}
+        groomName={groom.name}
+        brideName={bride.name}
+        location={location.name}
+      />
     </div>
   );
 }
