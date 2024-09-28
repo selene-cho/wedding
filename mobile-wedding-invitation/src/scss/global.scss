@@ -81,6 +81,10 @@ body {
   font-size: var(--font-reg);
 }
 
+body * {
+  font-family: 'GangwonEduModu', sans-serif;
+}
+
 /* react-day-picker */
 
 .rdp-root {
