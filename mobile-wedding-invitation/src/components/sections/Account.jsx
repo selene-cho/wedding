@@ -5,6 +5,7 @@ import Section from '@shared/Section';
 import Accordion from '@shared/Accordion';
 import AccountInfo from '@components/AccountInfo';
 import Toast from '@shared/Toast';
+import generateAssetsUrl from '@utils/generateAssetsUrl';
 import styles from './Account.module.scss';
 
 const cx = classNames.bind(styles);
@@ -71,8 +72,14 @@ export default function Contact({ groom, bride, image }) {
         <Toast toasts={toasts} handleClose={handleClose} />
       </Section>
       <picture className={cx('wrap-image')}>
-        <source srcSet={`/images/${image}.webp`} type="image/webp" />
-        <img src={`/images/${image}.jpg`} alt="웨딩사진" />
+        <source
+          srcSet={generateAssetsUrl({ filename: image, format: 'webp' })}
+          type="image/webp"
+        />
+        <img
+          src={generateAssetsUrl({ filename: image, format: 'jpg' })}
+          alt="웨딩사진"
+        />
       </picture>
     </>
   );

@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import Section from '@shared/Section';
 import Modal from '@shared/Modal';
 import KakaoMap from '@components/KakaoMap';
+import generateAssetsUrl from '@utils/generateAssetsUrl';
 
 import styles from './Location.module.scss';
 
@@ -107,11 +108,22 @@ export default function Location({ location }) {
         </div>
       </Section>
       <Modal isOpened={isOpenedModal} handleClose={() => handleClickMapModal()}>
-        <img
-          className={cx('wedding_hall_map-img')}
-          src="/images/wedding-hall-map.png"
-          alt="웨딩홀 약도"
-        />
+        <picture>
+          <source
+            srcSet={generateAssetsUrl({
+              filename: 'wedding-hall-map',
+              format: 'webp',
+            })}
+          />
+          <img
+            className={cx('wedding_hall_map-img')}
+            src={generateAssetsUrl({
+              filename: 'wedding-hall-map',
+              format: 'png',
+            })}
+            alt="웨딩홀 약도"
+          />
+        </picture>
       </Modal>
     </>
   );
