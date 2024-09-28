@@ -1,7 +1,7 @@
 @import '@scss/variable.scss';
 
 .container {
-  color: var(--beige);
+  color: var(--lightgray);
   min-width: calc($min-width * 0.7);
   max-width: calc($max-width * 0.7);
   width: 80vw;
@@ -14,7 +14,7 @@
       align-items: flex-end;
       margin: 10px 0;
       padding: 10px 0;
-      border-bottom: 1px dotted var(--beige);
+      border-bottom: 1px dotted var(--lightgray);
 
       span {
         &:first-child {
