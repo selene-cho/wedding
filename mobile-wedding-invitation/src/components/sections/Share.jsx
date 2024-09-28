@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { format, parseISO } from 'date-fns';
@@ -5,8 +6,8 @@ import { ko } from 'date-fns/locale';
 
 import Section from '@shared/Section';
 import Toast from '@shared/Toast';
+import generateAssetsUrl from '@utils/generateAssetsUrl';
 import styles from './Share.module.scss';
-import { useEffect, useState } from 'react';
 
 const cx = classNames.bind(styles);
 
@@ -35,7 +36,11 @@ export default function Share({ groomName, brideName, date, location }) {
       content: {
         title: `${groomName} ❤️ ${brideName} 결혼합니다.`,
         description: `${format(parseISO(date), 'M월 d일 eeee aaa h시', { locale: ko })} / ${location}`,
-        imageUrl: '/public/images/w360/wedding_11_w360.jpg',
+        imageUrl: `${generateAssetsUrl({
+          small: true,
+          format: 'jpg',
+          filename: 'wedding_11',
+        })}`,
         link: {
           mobileWebUrl: window.location.origin,
           webUrl: window.location.origin,

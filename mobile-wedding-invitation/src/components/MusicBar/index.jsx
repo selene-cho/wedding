@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames/bind';
 
+import generateAssetsUrl from '@utils/generateAssetsUrl';
 import styles from './MusicBar.module.scss';
 
 const cx = classNames.bind(styles);
@@ -41,7 +42,14 @@ export default function MusicBar() {
         )}
       </button>
       <audio ref={audioRef} volume="0.3" loop>
-        <source src="/music/bg-softly-gently.mp3" type="audio/mpeg" />
+        <source
+          src={generateAssetsUrl({
+            filename: 'bg-softly-gently',
+            format: 'mp3',
+            music: true,
+          })}
+          type="audio/mpeg"
+        />
       </audio>
     </div>
   );

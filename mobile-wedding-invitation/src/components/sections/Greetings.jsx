@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 
 import Section from '@shared/Section';
 import Contact from '@components/Contact';
+import generateAssetsUrl from '@utils/generateAssetsUrl';
 import styles from './Greetings.module.scss';
 
 const cx = classNames.bind(styles);
@@ -26,8 +27,17 @@ export default function Greetings({
         <span className={cx('divided-bar')}>-</span>
         <p className={cx('txt-invitation')}>{message.invitation}</p>
         <picture className={cx('wrap-image')}>
-          <source srcSet={`/images/${subImg}.webp`} type="image/webp" />
-          <img src={`/images/${subImg}.jpg`} alt="웨딩사진" />
+          <source
+            srcSet={generateAssetsUrl({
+              filename: subImg,
+              format: 'webp',
+            })}
+            type="image/webp"
+          />
+          <img
+            src={generateAssetsUrl({ filename: subImg, format: 'jpg' })}
+            alt="웨딩사진"
+          />
         </picture>
         <div className={cx('wrap-name')}>
           <div className={cx('wrap-parents')}>

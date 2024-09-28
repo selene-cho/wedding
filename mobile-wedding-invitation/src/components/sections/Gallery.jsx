@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import Section from '@shared/Section';
 import ImageViewer from '@components/ImageViewer';
 import IconViewMore from '@icons/IconViewMore';
+import generateAssetsUrl from '@utils/generateAssetsUrl';
 import styles from './Gallery.module.scss';
 
 const cx = classNames.bind(styles);
@@ -42,11 +43,19 @@ export default function Gallery({ images }) {
             >
               <picture>
                 <source
-                  srcSet={`/images/w360/${image}_w360.webp`}
+                  srcSet={generateAssetsUrl({
+                    small: true,
+                    format: 'webp',
+                    filename: image,
+                  })}
                   type="image/webp"
                 />
                 <img
-                  src={`/images/w360/${image}_w360.jpg`}
+                  src={generateAssetsUrl({
+                    small: true,
+                    format: 'jpg',
+                    filename: image,
+                  })}
                   alt={`웨딩사진${idx + 1}`}
                 />
               </picture>

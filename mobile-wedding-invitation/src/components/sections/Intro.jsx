@@ -4,7 +4,7 @@ import { ko } from 'date-fns/locale';
 
 import Section from '@shared/Section';
 import { changeUpperCase } from '@utils/changeUpperCase';
-
+import generateAssetsUrl from '@utils/generateAssetsUrl';
 import styles from './Intro.module.scss';
 
 const cx = classNames.bind(styles);
@@ -26,8 +26,17 @@ export default function Intro({
         <h3 className={cx('txt-date')}>{weddingDay}</h3>
       </div>
       <picture className={cx('wrap-image')}>
-        <source srcSet={`images/${mainImg}.webp`} type="image/webp" />
-        <img src={`images/${mainImg}.jpg`} alt="메인 웨딩 사진" />
+        <source
+          srcSet={generateAssetsUrl({
+            filename: mainImg,
+            format: 'webp',
+          })}
+          type="image/webp"
+        />
+        <img
+          src={generateAssetsUrl({ filename: mainImg, format: 'jpg' })}
+          alt="메인 웨딩 사진"
+        />
       </picture>
       <div className={cx('wrap-name')}>
         <span>{groomName}</span>

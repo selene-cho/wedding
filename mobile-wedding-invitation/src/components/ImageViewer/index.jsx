@@ -3,6 +3,7 @@ import { Navigation, Pagination, EffectFade } from 'swiper/modules';
 
 import Dimmed from '@shared/Dimmed';
 import IconClose from '@icons/IconClose';
+import generateAssetsUrl from '@utils/generateAssetsUrl';
 
 import 'swiper/scss';
 import 'swiper/scss/navigation';
@@ -43,8 +44,20 @@ export default function ImageViewer({
         {images.slice(0, images.length - 1).map((image, idx) => (
           <SwiperSlide key={idx}>
             <picture>
-              <source srcSet={`/images/${image}.webp`} type="image/webp" />
-              <img src={`/images/${image}.jpg`} alt={`웨딩사진${idx + 1}`} />
+              <source
+                srcSet={generateAssetsUrl({
+                  format: 'webp',
+                  filename: image,
+                })}
+                type="image/webp"
+              />
+              <img
+                src={generateAssetsUrl({
+                  format: 'jpg',
+                  filename: image,
+                })}
+                alt={`웨딩사진${idx + 1}`}
+              />
             </picture>
           </SwiperSlide>
         ))}
