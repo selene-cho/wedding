@@ -131,18 +131,60 @@ export default function CommentForm({
 
   function handleSubmit(e) {
     e.preventDefault();
+
+    if (comment.name === '') {
+      return setErrorMessage((prev) => ({
+        ...prev,
+        ['name']: ERROR_MSG.NO_NAME,
+      }));
+    }
+
+    if (comment.password === '') {
+      return setErrorMessage((prev) => ({
+        ...prev,
+        ['password']: ERROR_MSG.NO_PW,
+      }));
+    }
+
+    if (comment.content === '') {
+      return setErrorMessage((prev) => ({
+        ...prev,
+        ['content']: ERROR_MSG.NO_CONTENT,
+      }));
+    }
+
     mutation.mutate(comment);
   }
 
   function handleUpdate(e) {
     e.preventDefault();
 
-    if (prevComment.password !== comment.password) {
-      setErrorMessage((prev) => ({
+    if (comment.name === '') {
+      return setErrorMessage((prev) => ({
         ...prev,
-        ['password']: '잘못된 비밀번호입니다. 다시 입력해주세요.',
+        ['name']: ERROR_MSG.NO_NAME,
       }));
-      return;
+    }
+
+    if (comment.password === '') {
+      return setErrorMessage((prev) => ({
+        ...prev,
+        ['password']: ERROR_MSG.NO_PW,
+      }));
+    }
+
+    if (comment.content === '') {
+      return setErrorMessage((prev) => ({
+        ...prev,
+        ['content']: ERROR_MSG.NO_CONTENT,
+      }));
+    }
+
+    if (prevComment.password !== comment.password) {
+      return setErrorMessage((prev) => ({
+        ...prev,
+        ['password']: ERROR_MSG.WRONG_PW,
+      }));
     }
 
     setErrorMessage(initialErrorMessage);
@@ -165,7 +207,6 @@ export default function CommentForm({
             value={comment.name}
             autoComplete="off"
             placeholder="이름을 작성해주세요"
-            required
             onChange={(e) => handleInputChange('name', e.target.value)}
             onInvalid={(e) => e.preventDefault()}
           />
@@ -180,11 +221,9 @@ export default function CommentForm({
             name="password"
             type="password"
             value={comment.password}
-            pattern="[0-9]{4}"
             inputMode="numeric"
             autoComplete="off"
             placeholder="4자리 숫자"
-            required
             onChange={(e) => handleInputChange('password', e.target.value)}
             onInvalid={(e) => e.preventDefault()}
           />
@@ -199,11 +238,8 @@ export default function CommentForm({
             name="content"
             value={comment.content}
             placeholder=" 축하글을 남겨주세요🫶🏻&#10;(최대 150자, 공백포함)"
-            maxLength={150}
             autoComplete="off"
-            required
             onChange={(e) => handleInputChange('content', e.target.value)}
-            onInvalid={(e) => e.preventDefault()}
           ></textarea>
         </div>
         {errorMessage?.content && (
