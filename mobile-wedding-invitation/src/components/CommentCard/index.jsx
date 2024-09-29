@@ -60,6 +60,10 @@ export default function CommentCard({ comment, setToasts }) {
   function handleDelete(e) {
     e.preventDefault();
 
+    if (password === '') {
+      return setErrorMessage(ERROR_MSG.NO_PW);
+    }
+
     if (comment.password !== password) {
       return setErrorMessage(ERROR_MSG.WRONG_PW);
     }
@@ -114,9 +118,7 @@ export default function CommentCard({ comment, setToasts }) {
               value={password}
               autoComplete="off"
               placeholder="4자리 숫자"
-              required
               onChange={(e) => handleVerifyPassword(e.target.value)}
-              onInvalid={(e) => e.preventDefault()}
             />
           </div>
           {errorMessage && (

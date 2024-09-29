@@ -40,7 +40,8 @@
 .form-container {
   background-color: var(--white);
   border-radius: 8px;
-  padding: 20px 30px;
+  width: 80%;
+  padding: 1.25rem 1.875rem;
   display: flex;
   flex-direction: column;
 
@@ -71,12 +72,17 @@
       border-radius: 8px;
       padding: 10px 15px;
       background-color: var(--background);
+
+      &::placeholder {
+        font-size: var(--font-sm);
+      }
     }
   }
 
   .txt-error {
     color: var(--warn);
     font-size: var(--font-xs);
+    text-align: right;
   }
 
   button {
