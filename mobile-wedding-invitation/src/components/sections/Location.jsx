@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 
 import Section from '@shared/Section';
@@ -14,8 +14,11 @@ export default function Location({ location }) {
   const { subway, bus, car, parking } = location.transportation;
   const formattedLocationAddress = location.address.replace('(', '\n(');
 
+  const [naverMapLink, setNaverMapLink] = useState('#');
+
   const linkKakaoMap = `https://map.kakao.com/link/to/${car.searchToNavi},${location.lat},${location.lng}`;
-  const linkNaverMap = `https://map.naver.com/p?title=${car.searchToNavi}&lng=${location.lng}&lat=${location.lat}`;
+  const linkNaverMapWeb = `https://map.naver.com/p?title=${encodeURIComponent(car.searchToNavi)}&lng=${location.lng}&lat=${location.lat}`;
+  const linkNaverMapMobile = `nmap://route/car?dlat=${location.lat}&dlng=${location.lng}&dname=${encodeURIComponent(car.searchToNavi)}&appname=${import.meta.env.VITE_CLOUDFRONT_URL}`;
   const linkTMap = `tmap://route?goalname=${encodeURIComponent(car.searchToNavi)}&goalx=${location.lng}&goaly=${location.lat}&style=1`;
 
   const [isOpenedModal, setIsOpenedModal] = useState(false);
@@ -23,6 +26,16 @@ export default function Location({ location }) {
   function handleClickMapModal() {
     setIsOpenedModal((prev) => !prev);
   }
+
+  useEffect(() => {
+    const isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      return setNaverMapLink(linkNaverMapMobile);
+    }
+
+    setNaverMapLink(linkNaverMapWeb);
+  }, []);
 
   return (
     <>
@@ -46,7 +59,12 @@ export default function Location({ location }) {
             <div className={cx('txt-appName')}>KAKAO 지도</div>
           </button>
           <button className={cx('btn')}>
-            <a href={linkNaverMap} target="_blank" rel="noreferrer noopener">
+            <a
+              id="naverMapLink"
+              href={naverMapLink}
+              target="_blank"
+              rel="noreferrer noopener"
+            >
               <img src="/icons/naverMap.png" alt="네이버 지도" />
             </a>
             <div className={cx('txt-appName')}>NAVER 지도</div>
