@@ -15,14 +15,6 @@ export default function Gallery({ images }) {
 
   const open = selectedIdx > -1;
 
-  function handleClickImage(idx) {
-    setSelectedIdx(idx);
-  }
-
-  function handleClose() {
-    setSelectedIdx(-1);
-  }
-
   function handleClickViewMore() {
     setIsOpenedViewMore((prev) => !prev);
   }
@@ -34,12 +26,10 @@ export default function Gallery({ images }) {
           {images.slice(0, images.length - 1).map((image, idx) => (
             <li
               key={idx}
-              className={cx(
-                'wrap-image',
-                { foldedView: idx < 9 },
-                idx >= 9 && (isOpenedViewMore ? 'fadeIn' : 'fadeOut'),
-              )}
-              onClick={() => handleClickImage(idx)}
+              className={cx('wrap-image', {
+                fadeOutUp: idx >= 9 && !isOpenedViewMore,
+              })}
+              onClick={() => setSelectedIdx(idx)}
             >
               <picture>
                 <source
@@ -63,12 +53,7 @@ export default function Gallery({ images }) {
           ))}
         </ul>
         <div className={cx('wrap-view-more')}>
-          <div
-            className={cx(
-              'gradientBar',
-              isOpenedViewMore ? 'fadeIn' : 'fadeOut',
-            )}
-          ></div>
+          <div className={cx('gradientBar', { show: !isOpenedViewMore })}></div>
           <button className={cx('wrap-icon')} onClick={handleClickViewMore}>
             <IconViewMore isOpenedViewMore={isOpenedViewMore} />
           </button>
@@ -78,7 +63,7 @@ export default function Gallery({ images }) {
         images={images}
         selectedIdx={selectedIdx}
         open={open}
-        handleClose={handleClose}
+        handleClose={() => setSelectedIdx(-1)}
       />
     </>
   );
