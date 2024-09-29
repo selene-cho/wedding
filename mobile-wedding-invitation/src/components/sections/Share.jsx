@@ -39,7 +39,7 @@ export default function Share({ groomName, brideName, date, location }) {
         imageUrl: `${generateAssetsUrl({
           small: true,
           format: 'jpg',
-          filename: 'wedding_11',
+          filename: 'wedding_01',
         })}`,
         link: {
           mobileWebUrl: window.location.origin,
