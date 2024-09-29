@@ -9,11 +9,11 @@
     line-height: 1.4;
 
     .txt-day {
-      font-size: var(--font-xl);
+      font-size: var(--font-2xl);
     }
 
     .txt-date {
-      font-size: var(--font-lg);
+      font-size: var(--font-xl);
     }
   }
 
@@ -100,7 +100,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
-    font-size: var(--font-lg);
+    font-size: var(--font-xl);
     font-weight: bold;
 
     .divide-dot {
@@ -112,12 +112,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: var(--font-sm);
+    font-size: var(--font-reg);
     line-height: 1.8;
     letter-spacing: 0.8px;
-
-    .txt-time {
-      font-size: var(--font-sm);
-    }
   }
 }

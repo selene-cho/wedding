@@ -4,14 +4,14 @@
   .wrap-share {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 40px;
 
     .wrap-btn {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      font-size: var(--font-xs);
+      font-size: var(--font-reg);
       font-weight: bold;
 
       .icon-btn {

@@ -86,8 +86,10 @@ export default function Location({ location }) {
                 </span>
               ))}
             </div>
-            <div className={cx('txt-way2come')}>- {subway.directions}</div>
-            <div className={cx('txt-way2come')}>- {subway.shuttleBus}</div>
+            <div className={cx('wrap-subway-directions')}>
+              <div className={cx('txt-way2come')}>- {subway.directions}</div>
+              <div className={cx('txt-way2come')}>- {subway.shuttleBus}</div>
+            </div>
           </div>
           <div className={cx('wrap-vehicle')}>
             <div className={cx('txt-vehicle')}>버스</div>
@@ -114,7 +116,9 @@ export default function Location({ location }) {
               {car.highway.map((way, idx) => (
                 <div className={cx('wrap-car')} key={idx}>
                   <span className={cx('txt-way')}>{way.name}</span>
-                  <div>- {way.directions}</div>
+                  <div className={cx('txt-way-directions')}>
+                    - {way.directions}
+                  </div>
                 </div>
               ))}
             </div>

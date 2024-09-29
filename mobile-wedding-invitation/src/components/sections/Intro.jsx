@@ -44,7 +44,7 @@ export default function Intro({
         <span>{brideName}</span>
       </div>
       <div className={cx('wrap-info')}>
-        <div className={cx('txt-time')}>
+        <div>
           {format(parseISO(date), 'yyyy년 MM월 d일, eeee bbb h시', {
             locale: ko,
           })}

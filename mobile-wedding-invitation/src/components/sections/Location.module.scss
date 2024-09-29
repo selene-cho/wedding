@@ -2,29 +2,30 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 24px;
+  margin: 0 10px;
 
   .txt-wedding_hall {
+    font-size: var(--font-lg);
     font-weight: bold;
   }
   .txt-address {
     text-align: center;
     margin: 10px 5px;
-    font-size: var(--font-xs);
+    font-size: var(--font-sm);
     white-space: pre-wrap;
   }
 }
 
 .btn-map-modal {
   margin: 0 auto;
-  margin-bottom: 30px;
-  height: 36px;
-  padding: 8px 12px;
-  border: 1px solid var(--lightgray);
+  margin-bottom: 50px;
+  height: 40px;
+  padding: 0 15px;
+  border: 1px solid var(--blue2);
   border-radius: 8px;
   vertical-align: center;
   background-color: white;
-  font-size: var(--font-sm);
+  font-size: var(--font-reg);
 }
 
 .wrap-btns {
@@ -58,7 +59,7 @@
 
     .txt-appName {
       margin-top: 8px;
-      font-size: var(--font-xs);
+      font-size: var(--font-reg);
     }
   }
 }
@@ -81,10 +82,15 @@
     .txt-vehicle {
       font-weight: bold;
       margin-bottom: 5px;
+      font-size: var(--font-lg);
+    }
+
+    .wrap-subway-directions {
+      margin-top: 5px;
     }
 
     .txt-way2come {
-      font-size: var(--font-xs);
+      font-size: var(--font-reg);
 
       .subway-line {
         color: var(--white);
@@ -101,13 +107,17 @@
       }
 
       .wrap-bus {
-        margin-bottom: 10px;
+        margin-bottom: 15px;
 
         .txt-bus-direction {
           background-color: var(--darkgray);
           color: var(--white);
           padding: 4px 7px;
           border-radius: 15px;
+        }
+
+        ul {
+          margin-top: 5px;
         }
       }
 
@@ -120,12 +130,17 @@
           padding: 4px 7px;
           border-radius: 15px;
         }
+
+        .txt-way-directions {
+          margin: 5px 0 15px;
+        }
       }
     }
 
     .wrap-parking {
       .txt-parking {
-        font-size: var(--font-xs);
+        margin-top: 5px;
+        font-size: var(--font-reg);
       }
     }
   }
