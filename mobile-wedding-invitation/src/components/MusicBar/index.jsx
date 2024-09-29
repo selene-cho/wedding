@@ -36,9 +36,9 @@ export default function MusicBar() {
       )}
       <button className={cx('btn')} onClick={handleMusic}>
         {musicOn ? (
-          <IconMusicOn className={cx('icon-music-on')} />
+          <IconMusicOn className={cx('icon-speaker')} />
         ) : (
-          <IconMusicOff className={cx('icon-music-off')} />
+          <IconMusicOff className={cx('icon-speaker')} />
         )}
       </button>
       <audio ref={audioRef} volume="0.3" loop>
@@ -55,10 +55,10 @@ export default function MusicBar() {
   );
 }
 
-function IconMusicOn() {
+function IconMusicOn({ className }) {
   return (
-    <svg viewBox="0 0 256 256">
-      <rect fill="none" height="256" width="256" />
+    <svg className={className} viewBox="0 0 256 256">
+      <rect fill="none" />
       <path
         d="M218.9,77.1a71.9,71.9,0,0,1,0,101.8"
         fill="none"
@@ -94,10 +94,10 @@ function IconMusicOn() {
   );
 }
 
-function IconMusicOff() {
+function IconMusicOff({ className }) {
   return (
-    <svg viewBox="0 0 256 256">
-      <rect fill="none" height="256" width="256" />
+    <svg className={className} viewBox="0 0 256 256">
+      <rect fill="none" />
       <path
         d="M80,168H32a8,8,0,0,1-8-8V96a8,8,0,0,1,8-8H80l72-56V224Z"
         fill="none"
